@@ -1,0 +1,92 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   USER PROFILE (public view)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.user-profile {
+  display: flex; flex-direction: column; gap: 0; width: 100%;
+  max-width: 860px; margin: 0 auto;
+}
+.up-loading { padding: 3rem; text-align: center; color: #444; font-size: 0.9rem; }
+
+.up-back {
+  display: inline-flex; align-items: center; gap: 0.4rem; background: transparent;
+  border: none; color: #555; font-size: 0.85rem; font-family: 'Inter', sans-serif;
+  cursor: pointer; padding: 0.4rem 0; margin-bottom: 0.75rem; transition: color 0.15s;
+}
+.up-back:hover { color: #aaa; }
+
+/* Hero */
+.up-hero {
+  background: #111; border: 1px solid #1a1a1a; border-radius: 16px;
+  overflow: hidden; margin-bottom: 1rem;
+}
+.up-banner {
+  height: 180px; background: linear-gradient(135deg, #111 0%, #1c1c1c 100%);
+  background-size: cover; background-position: center;
+}
+.up-avatar-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  padding: 0 1.5rem 1.25rem; margin-top: -44px; gap: 1rem;
+}
+.up-avatar-wrap { position: relative; flex-shrink: 0; margin-top: 0; }
+.up-avatar {
+  border-radius: 50%; border: 4px solid #111; background: #1a1a1a;
+  background-size: cover; background-position: center; display: flex;
+  align-items: center; justify-content: center; font-weight: 700; color: #888;
+}
+.up-online-dot {
+  position: absolute; bottom: 5px; right: 5px; width: 14px; height: 14px;
+  background: #40c057; border: 2.5px solid #111; border-radius: 50%;
+}
+.up-online-dot--sm { width: 10px; height: 10px; bottom: 1px; right: 1px; }
+
+.up-actions { display: flex; gap: 0.5rem; flex-shrink: 0; padding-top: 48px; }
+.up-msg-btn {
+  display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem;
+  background: #fff; color: #000; border: none; border-radius: 8px;
+  font-size: 0.85rem; font-weight: 600; font-family: 'Inter', sans-serif;
+  cursor: pointer; white-space: nowrap; transition: background 0.2s; height: 36px;
+}
+.up-msg-btn:hover { background: #e8e8e8; }
+.up-follow-btn {
+  display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem;
+  background: transparent; border: 1px solid #333; border-radius: 8px; color: #888;
+  font-size: 0.85rem; font-family: 'Inter', sans-serif; cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s; white-space: nowrap; height: 36px;
+}
+.up-follow-btn:hover { border-color: #555; color: #ccc; }
+.up-follow-btn--active { background: transparent; }
+
+.up-info-block { padding: 0 1.5rem 1.25rem; }
+.up-name { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.2rem; line-height: 1.2; }
+.up-name.gradient-name { background-size: 200% auto; animation: gradientShift 3s linear infinite; }
+.up-username { font-size: 0.82rem; color: #444; display: inline; }
+.up-online-label { font-size: 0.72rem; color: #40c057; margin-left: 0.5rem; display: inline; }
+.up-bio { font-size: 0.875rem; color: #888; margin: 0.5rem 0 0.75rem; line-height: 1.55; }
+
+.up-stats { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.up-stat {
+  display: flex; align-items: center; gap: 0.3rem; background: transparent;
+  border: none; color: #555; font-size: 0.82rem; font-family: 'Inter', sans-serif;
+  cursor: pointer; padding: 0.3rem 0; transition: color 0.15s;
+}
+.up-stat:hover { color: #888; }
+.up-stat strong { color: #ccc; font-weight: 600; }
+.up-stat.active strong { color: inherit; }
+
+.up-posts { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; }
+.up-empty { text-align: center; padding: 2rem; color: #333; font-size: 0.875rem; }
+
+.up-user-list { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
+.up-user-row {
+  display: flex; align-items: center; gap: 0.75rem; padding: 0.65rem 0.85rem;
+  background: #111; border: 1px solid #1a1a1a; border-radius: 10px;
+}
+.up-user-avatar-wrap { position: relative; flex-shrink: 0; }
+.up-user-avatar {
+  width: 36px; height: 36px; border-radius: 50%; border: 2px solid #fff;
+  background: #1a1a1a; background-size: cover; background-position: center;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 600; color: #888;
+}
+.up-user-name { font-size: 0.875rem; font-weight: 600; display: block; }
+.up-user-username { font-size: 0.75rem; color: #444; }

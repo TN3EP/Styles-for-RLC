@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MODALS — Cropper, Changelog
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Cropper */
+.cropper-overlay {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; backdrop-filter: blur(6px);
+}
+.cropper-modal {
+  background: #111; border: 1px solid #222; border-radius: 16px;
+  width: 90%; max-width: 640px; overflow: hidden; display: flex;
+  flex-direction: column; box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+}
+.cropper-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.25rem; border-bottom: 1px solid #1a1a1a;
+  font-size: 0.9rem; font-weight: 600; color: #fff;
+}
+.cropper-close {
+  background: none; border: none; color: #555; cursor: pointer;
+  display: flex; align-items: center; padding: 0.2rem; border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.cropper-close:hover { color: #fff; background: #1e1e1e; }
+.cropper-area {
+  position: relative; width: 100%; height: 360px; background: #0a0a0a;
+}
+.cropper-footer {
+  padding: 1rem 1.25rem; border-top: 1px solid #1a1a1a;
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.cropper-zoom { display: flex; align-items: center; gap: 0.75rem; }
+.cropper-zoom button {
+  background: #1a1a1a; border: 1px solid #222; border-radius: 7px;
+  color: #888; width: 32px; height: 32px; display: flex;
+  align-items: center; justify-content: center; cursor: pointer;
+  flex-shrink: 0; transition: color 0.2s, border-color 0.2s;
+}
+.cropper-zoom button:hover { color: #fff; border-color: #444; }
+.zoom-slider {
+  flex: 1; -webkit-appearance: none; height: 3px;
+  background: #2a2a2a; border-radius: 2px; outline: none; cursor: pointer;
+}
+.zoom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px;
+  border-radius: 50%; background: #fff; cursor: pointer; border: none;
+}
+.cropper-actions { display: flex; gap: 0.6rem; justify-content: flex-end; }
+.btn-crop-cancel {
+  padding: 0.6rem 1.2rem; background: transparent; border: 1px solid #222;
+  border-radius: 9px; color: #666; font-size: 0.875rem; font-family: 'Inter', sans-serif;
+  cursor: pointer; transition: border-color 0.2s, color 0.2s;
+}
+.btn-crop-cancel:hover { border-color: #444; color: #fff; }
+.btn-crop-done {
+  display: flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.4rem;
+  background: #fff; border: none; border-radius: 9px; color: #000;
+  font-size: 0.875rem; font-weight: 600; font-family: 'Inter', sans-serif;
+  cursor: pointer; transition: background 0.2s;
+}
+.btn-crop-done:hover { background: #e8e8e8; }
+
+/* Changelog */
+.changelog-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.75);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; backdrop-filter: blur(4px); padding: 1rem;
+}
+.changelog-modal {
+  background: #111; border: 1px solid #222; border-radius: 16px;
+  width: 100%; max-width: 520px; max-height: 80vh; display: flex;
+  flex-direction: column; box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+  animation: slideUp 0.2s ease;
+}
+.changelog-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 1.5rem; border-bottom: 1px solid #1a1a1a; flex-shrink: 0;
+}
+.changelog-header h2 { font-size: 1.05rem; font-weight: 600; color: #fff; }
+.changelog-close {
+  background: none; border: none; color: #555; cursor: pointer;
+  display: flex; align-items: center; padding: 0.25rem; border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.changelog-close:hover { color: #fff; background: #1e1e1e; }
+.changelog-body {
+  overflow-y: auto; padding: 1.25rem 1.5rem; flex: 1;
+  scrollbar-width: thin; scrollbar-color: #222 transparent;
+}
+.changelog-body::-webkit-scrollbar { width: 4px; }
+.changelog-body::-webkit-scrollbar-track { background: transparent; }
+.changelog-body::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
+.changelog-release { margin-bottom: 0.25rem; }
+.changelog-release-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.9rem; }
+.changelog-badge {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.3rem 0.7rem; background: #1a1a1a; border: 1px solid #2a2a2a;
+  border-radius: 20px; font-size: 0.75rem; font-weight: 600; color: #ccc;
+  font-family: monospace;
+}
+.changelog-date { font-size: 0.82rem; color: #444; }
+.changelog-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; padding: 0; }
+.changelog-list li {
+  font-size: 0.875rem; color: #aaa; line-height: 1.55;
+  padding-left: 1rem; position: relative;
+}
+.changelog-list li::before { content: '•'; position: absolute; left: 0; color: #444; }
+.changelog-divider { height: 1px; background: #1a1a1a; margin: 1.25rem 0; }

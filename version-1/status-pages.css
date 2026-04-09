@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATUS PAGE, STATIC PAGES, COOKIES
+   ═══════════════════════════════════════════════════════════════════════════ */
+.status-page {
+  min-height: 100dvh; display: flex; align-items: flex-start;
+  justify-content: center; padding: 2rem 1rem;
+}
+.status-page-inner { width: 100%; max-width: 860px; }
+.status-top-label {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 1.5px;
+  color: #444; text-transform: uppercase; margin-bottom: 0.75rem;
+}
+.status-main-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;
+}
+.status-main-title-row { display: flex; align-items: center; gap: 0.75rem; }
+.status-dot {
+  width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+.status-dot-ok { background: #69db7c; box-shadow: 0 0 8px #69db7c88; }
+.status-dot-err { background: #ff6b6b; box-shadow: 0 0 8px #ff6b6b88; }
+.status-main-title { font-size: 2rem; font-weight: 700; color: #fff; margin: 0; }
+.status-updated { font-size: 0.82rem; color: #555; }
+
+.status-stats-row {
+  display: flex; gap: 2rem; margin-bottom: 2rem; padding: 1rem 1.25rem;
+  background: rgba(17,17,17,0.8); border: 1px solid #1a1a1a; border-radius: 12px;
+}
+.status-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+.status-stat-val { font-size: 1.3rem; font-weight: 700; color: #fff; }
+.status-stat-label { font-size: 0.72rem; color: #444; }
+
+.status-services { display: flex; flex-direction: column; gap: 0; }
+.status-service-row { padding: 1.25rem 0; border-bottom: 1px solid #1a1a1a; }
+.status-service-row:last-child { border-bottom: none; }
+.status-service-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem; gap: 1rem; }
+.status-service-name { font-size: 1rem; font-weight: 600; color: #fff; display: block; margin-bottom: 0.2rem; }
+.status-service-desc { font-size: 0.78rem; color: #444; display: block; }
+.status-service-uptime { font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+
+.uptime-bar-wrap { width: 100%; }
+.uptime-bar { display: flex; gap: 2px; height: 32px; align-items: stretch; }
+.uptime-bar-day { flex: 1; border-radius: 2px; min-width: 3px; transition: opacity 0.15s; cursor: default; }
+.uptime-bar-day:hover { opacity: 0.7; }
+.uptime-ok { background: #2d6a4f; }
+.uptime-degraded { background: #b5830a; }
+.uptime-down { background: #7f1d1d; }
+.uptime-bar-labels { display: flex; justify-content: space-between; margin-top: 0.4rem; font-size: 0.7rem; color: #444; }
+
+.status-footer-note { margin-top: 2rem; font-size: 0.75rem; color: #333; text-align: center; }
+
+/* Status page (old) */
+.status-header { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.status-overall {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.82rem; font-weight: 600;
+}
+.status-overall.ok { background: rgba(105,219,124,0.1); color: #69db7c; border: 1px solid rgba(105,219,124,0.2); }
+.status-overall.error { background: rgba(255,107,107,0.1); color: #ff6b6b; border: 1px solid rgba(255,107,107,0.2); }
+.status-overall.checking { background: rgba(255,212,59,0.1); color: #ffd43b; border: 1px solid rgba(255,212,59,0.2); }
+.status-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+.status-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.85rem 1rem; background: #111; border: 1px solid #1a1a1a; border-radius: 10px;
+}
+.status-row-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.status-row-name { font-size: 0.9rem; font-weight: 600; color: #ccc; }
+.status-row-desc { font-size: 0.75rem; color: #444; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600;
+}
+.status-ok { background: rgba(105,219,124,0.1); color: #69db7c; }
+.status-error { background: rgba(255,107,107,0.1); color: #ff6b6b; }
+.status-checking { background: rgba(255,212,59,0.1); color: #ffd43b; }
+.status-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 0.78rem; color: #444; flex-wrap: wrap; gap: 0.5rem;
+}
+.status-refresh {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.45rem 1rem; background: transparent; border: 1px solid #222;
+  border-radius: 8px; color: #666; font-size: 0.82rem; cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.status-refresh:hover { border-color: #444; color: #aaa; }
+.status-refresh:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Static pages */
+.static-page {
+  min-height: 100dvh; display: flex; align-items: flex-start;
+  justify-content: center; padding: 2rem 1rem;
+}
+.static-container {
+  width: 100%; max-width: 720px; background: rgba(17,17,17,0.9);
+  border: 1px solid #222; border-radius: 16px; padding: 2rem;
+}
+.static-back {
+  display: inline-block; color: #555; text-decoration: none; font-size: 0.85rem;
+  margin-bottom: 1.5rem; transition: color 0.2s;
+}
+.static-back:hover { color: #aaa; }
+.static-title { font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.static-date { font-size: 0.8rem; color: #444; margin-bottom: 2rem; }
+.static-content h2 { font-size: 1rem; font-weight: 600; color: #ccc; margin: 1.5rem 0 0.5rem; }
+.static-content p { font-size: 0.9rem; color: #888; line-height: 1.7; margin-bottom: 0.5rem; }
+.static-content a { color: #74c0fc; }
+
+/* Cookies table */
+.cookies-table { border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden; margin: 1rem 0; }
+.cookies-row {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 2fr;
+  gap: 0.5rem; padding: 0.65rem 0.85rem;
+  font-size: 0.82rem; color: #888; border-bottom: 1px solid #1a1a1a;
+}
+.cookies-row:last-child { border-bottom: none; }
+.cookies-header { background: #111; color: #555; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.cookies-row code { background: #1a1a1a; padding: 2px 6px; border-radius: 4px; font-size: 0.78rem; color: #74c0fc; }
